@@ -1,49 +1,27 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 /**
+ * main - print last digit in random number
  *
- * main - print pairs of double digit combos
- *
- * Description: print pairs of double digit combos
+ * Description: print last digit in random number
  *
  * Return: Always 0 (Success)
  */
 
 int main(void)
 {
-	int i, j, k, m;
+	int n, last;
 
-	i = 48;
-	while (j < 58)
-	{
-		j = 48;
-		while (j < 58)
-		{
-			m = j + 1;
-			k = i;
-			while (k < 58)
-			{
-				while (m < 58)
-				{
-					putchar(i);
-					putchar(j);
-					putchar(32);
-					putchar(k);
-					putchar(m);
-					if (i < 57 || j < 56 || k < 57 || m < 57)
-					{
-						putchar(44);
-						putchar(32);
-					}
-					m++;
-				}
-				m = 48;
-				k++;
-			}
-			j++;
-		}
-		i++
-	}
-	putchar(10)
-	return(0)
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
+	last = n % 10;
+	if (last > 5
+		printf("Last digit of %d is %d and is greater than 5\n", n, last);
+	else if (last == 0)
+		printf("Last digit of %d is %d and is 0\n", n, last);
+	else if (last < 6 && last != 0)
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, last);
+	return (0);
 }
